@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome to Temperature Converter</h1>
+
+    <div class="container">
+        <h2>Temperature Converter</h2>
+        <br><br>
+        <div class="input_box">
+            <label for="celsius">Celsius</label>
+            <input type="number" id="celsius" oninput="celToFar()" placeholder="value">
+        </div>
+        <div class="input_box">
+            <label for="fahrenheit">Fahrenheit</label>
+            <input type="number" id="fahrenheit" oninput="farToCel()" placeholder="value">
+        </div>
+    </div>
+    <script>
+        let celsius = document.getElementById("celsius");
+        let fahrenheit = document.getElementById("fahrenheit");
+
+        function celToFar() {
+            let output = (parseFloat(celsius.value) * 9 / 5) + 32;
+            fahrenheit.value = parseFloat(output.toFixed(2));
+        }
+
+        function farToCel() {
+            let output = (parseFloat(fahrenheit.value) - 32) * 5 / 9;
+            celsius.value = parseFloat(output.toFixed(2));
+
+        }
+    </script>
+
+    <div class="img">
+        <h1>
+                <img src="images/images.png" style="height:300px ;width:400px;">
+    </div>
+
+</body>
+
+</html>
